@@ -1,0 +1,90 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KRSXH Phone Analyzer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Fira Code', monospace;
+      background: #0f0f0f;
+      color: #f1f1f1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 800px;
+      width: 100%;
+      background: #1c1c1c;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.7);
+      padding: 2rem;
+    }
+    h1 {
+      color: #f72585;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    input {
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 5px;
+      border: none;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+    button {
+      padding: 0.75rem 1.5rem;
+      background: #7209b7;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 2rem;
+      white-space: pre-wrap;
+      background: #2a2a2a;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+    footer {
+      margin-top: 3rem;
+      color: #888;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📞 KRSXH Phone Analyzer</h1>
+    <input type="text" id="phoneInput" placeholder="Enter number with country code (e.g. +918888888888)" />
+    <button onclick="analyze()">Analyze</button>
+    <div class="result" id="resultBox">Results will appear here...</div>
+  </div>
+  <footer>
+    Built with ❤️ by @KrsxhPy
+  </footer>  <script>
+    async function analyze() {
+      const input = document.getElementById('phoneInput').value;
+      const resultBox = document.getElementById('resultBox');
+      resultBox.textContent = '⏳ Analyzing...';
+
+      // Normally here you'd send the input to your backend via fetch()
+      // This is a placeholder for your Python API call
+
+      setTimeout(() => {
+        resultBox.textContent = `📞 Sample Report for: ${input}
+✅ Valid: Yes
+🌎 Country: India
+📡 Carrier: Jio
+🕓 Timezones: Asia/Kolkata`;
+      }, 1200);
+    }
+  </script></body>
+</html>
